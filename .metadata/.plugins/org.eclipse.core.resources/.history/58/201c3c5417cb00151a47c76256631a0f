@@ -1,0 +1,21 @@
+package com.vikas;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+//WAP that takes a string and prints all duplicate words in the string
+
+public class Exer4 {
+	
+	public static void main(String... strings) throws IOException{
+		
+		String str;
+		String arr[];
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		str=br.readLine();
+		arr=new Striing[str.length()];
+		
+	}
+	
+}

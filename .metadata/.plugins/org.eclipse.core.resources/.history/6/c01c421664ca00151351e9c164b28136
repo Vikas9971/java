@@ -1,0 +1,16 @@
+package com.vikas;
+
+public class Hello {
+    	int count=0;
+    	Hello(){ 
+    	count++; 
+    	System.out.println(count); 
+    	}
+    public static void main(String... arg){
+    	Integer i = null;
+    	int j = i;
+    	System.out.print(j)
+    }
+}
+
+

@@ -1,0 +1,6 @@
+package com.vikas;
+
+class CDF {
+	Integer i = null;
+	int j = i;
+}

@@ -1,0 +1,5 @@
+package com.vikas;
+//- WAP to take 3 string - A,B,C. Replace all occurences of B in A by C
+public class replaceString {
+
+}

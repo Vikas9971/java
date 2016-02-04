@@ -1,0 +1,11 @@
+package com.vikas;
+
+//Write a program to check whether one string is a rotation of another
+
+public class Exer6 {
+	
+	public static void main(String...strings){
+		
+	}
+
+}

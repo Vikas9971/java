@@ -1,0 +1,17 @@
+package com.vikas;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+//Write a program to check whether one string is a rotation of another
+
+public class Exer6 {
+	
+	public static void main(String...strings){
+		String str,arr[];
+		System.out.println("Enter the string:");
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		
+	}
+
+}

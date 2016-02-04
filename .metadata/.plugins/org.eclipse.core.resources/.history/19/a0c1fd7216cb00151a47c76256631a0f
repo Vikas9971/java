@@ -1,0 +1,25 @@
+package com.vikas;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+//WAP that creates an object every time user chooses so and prints total number of objects 
+//created by that time..
+
+public class Exer3 {
+	
+	static int count;
+	
+	public static void main(String... args){
+		char ch;
+		
+		do{
+			new Exer3();
+			System.out.println("Do you want to create an object");
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			
+		}while(ch=='y');
+		
+		
+	}
+
+}

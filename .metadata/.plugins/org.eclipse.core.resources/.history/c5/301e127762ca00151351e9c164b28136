@@ -1,0 +1,23 @@
+package com.vikas;
+
+public class Hello {
+
+	
+    public void demo(){
+        final int a=1;
+
+        class InnerClass{
+            public void innerMethod(){
+                System.out.println("A is: " + a);
+            }
+        }
+
+        new InnerClass().innerMethod();
+    }
+
+    public static void main(String... arg){
+        new Hello().demo();
+    }
+}
+
+

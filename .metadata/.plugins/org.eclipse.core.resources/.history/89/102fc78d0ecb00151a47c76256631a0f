@@ -1,0 +1,15 @@
+package com.vikas;
+
+import java.io.BufferedReader;
+
+class Hello {
+	public static void main(String args[]){
+		
+		String str1,str2;
+		System.out.println("Enter first String");
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter String");
+        String s = br.readLine();
+		
+	}
+}

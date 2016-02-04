@@ -1,0 +1,6 @@
+package com.vikas;
+
+class Hello {
+	Integer i = null;
+	int j = i;
+}

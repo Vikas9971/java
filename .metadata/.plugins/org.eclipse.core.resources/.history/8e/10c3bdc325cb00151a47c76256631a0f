@@ -1,0 +1,31 @@
+package com.vikas;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+//Write a program to check whether one string is a rotation of another
+
+public class Exer6 {
+	
+	public static void main(String...strings) throws IOException{
+		String str1,str2,arr[];
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter the string:");
+		str1=br.readLine();
+		System.out.println("Enter the string:");
+		str2=br.readLine();
+		arr=str1.split(" ");
+		
+		StringBuilder builder = new StringBuilder();
+
+		for (String string : arr) {
+		    if (builder.length() > 0) {
+		        builder.append(" ");
+		    }
+		    builder.append(string);
+		}
+
+		String str = builder.toString();
+	}
+}

@@ -1,0 +1,32 @@
+package com.vikas;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+//WAP that takes 2 strings and returns all words that are present in exactly one of the strings
+
+public class Exer7 {
+	
+	public static void main(String... args) throws IOException{
+		
+		String a,b;
+		String arr1[],arr2[],arr3[]=new String[100];
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter First String");
+        a = br.readLine();
+        arr1=a.split(" ");
+        System.out.println("Enter Second String");
+        b = br.readLine();
+        arr2=b.split(" ");
+		for(int i=0;i<arr1.length;i++){
+			for(int j=0;j<arr2.length;j++){
+				if(arr1[i].equals(arr2[j])){
+					
+				}
+				
+			}
+		}
+	}
+
+}

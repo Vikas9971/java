@@ -1,0 +1,38 @@
+package com.vikas;
+
+class A {
+		A() { print(); } 
+		void print() 
+		{ System.out.println("A"); } 
+		} 
+		public class B extends A { 
+		static int staticVariable2 = 123456; 
+		static int staticVariable; 
+		static { 
+		System.out.println("Static Variable 2 - " + staticVariable2); System.out.println("Static Initialization block"); 
+		staticVariable = Math.round(3.5f); 
+		} 
+		int instanceVariable; 
+		{ 
+		System.out.println("Initialization block B"); 
+		instanceVariable = Math.round(3.5f); 
+		staticVariable = Math.round(3.5f); 
+		} 
+		B() { 
+		System.out.println("Constructor of B"); 
+		} 
+		public static void main(String[] args) { 
+		A a = new B(); a.print(); // what is value of instanceVariable at this point?\ 
+		/**
+		* which print method is called, Parent's or child's 
+		*/ System.out.println("main"); 
+		} 
+		void print() { 
+		System.out.println("Instance Variable - " + instanceVariable); 
+		} 
+		static void somethingElse() { 
+		System.out.println("Static method - someThingElse"); 
+		} 
+		}
+
+

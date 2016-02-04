@@ -1,0 +1,11 @@
+package com.vikas;
+
+//WAP that takes a string and prints all duplicate words in the string
+
+public class Exer4 {
+	
+	public static void main(String... strings){
+		
+	}
+	
+}

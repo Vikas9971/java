@@ -1,0 +1,11 @@
+package com.vikas;
+
+//- WAP to count number of characters and words in a string
+
+public class Exer5 {
+	
+	public static void main(String...strings){
+		
+	}
+
+}

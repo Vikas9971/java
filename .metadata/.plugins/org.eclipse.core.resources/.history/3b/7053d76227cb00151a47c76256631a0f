@@ -1,0 +1,43 @@
+package com.vikas;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+//Write a program to check whether one string is a rotation of another
+
+public class Exer6 {
+	
+	public static void main(String...strings) throws IOException{
+		String str1,str2,arr[];
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter the string:");
+		str1=br.readLine();
+		System.out.println("Enter the string:");
+		str2=br.readLine();
+		arr=str1.split("");	
+		if(str1.equals(str2)){System.out.println("Equal Strings without rotation");return;}
+		for(int i=1;i<arr.length;i++){
+			arr=rotateArray(arr);
+			if(createString(arr).equals(str2)){System.out.println("Strings are equal with rotation");break;}
+		}
+	}
+	
+	static String[] rotateArray(String[] arr){
+		String s=arr[0];
+		int i;
+		for(i=1;i<arr.length;i++){
+			arr[i-1]=arr[i];
+		}
+		arr[i]=s;		
+		return arr;
+	}
+	
+	static String createString( String arr[]){
+		StringBuilder builder = new StringBuilder();
+		for (String string : arr) {
+		    builder.append(string);
+		}
+		return builder.toString();
+	}
+}
