@@ -1,0 +1,14 @@
+package vikas;
+
+public abstract class Restaurant {
+
+	String name,phoneNumber;
+	
+}
+
+
+class GreenChilly{
+	
+	
+	
+}

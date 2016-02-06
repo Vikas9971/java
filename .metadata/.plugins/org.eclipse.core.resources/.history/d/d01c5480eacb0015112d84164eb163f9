@@ -1,0 +1,84 @@
+package vikas;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public abstract class Restaurant {
+
+	protected String name,phoneNumber;
+	protected int amt;
+	abstract void placeOrder(String item);
+	abstract void generateBill(int amt);
+	Restaurant(String a,String b){
+		name=a;
+		phoneNumber=b;
+	}
+	public String getName(){
+		return name;
+	}	
+	public String getPhoneNumber(){
+		return phoneNumber;
+	}
+	public int getAmt(){
+		return amt;
+	}	
+	public void setAmt(int t){
+		amt=t;
+	}
+}
+
+
+class GreenChilly extends Restaurant{
+	
+	static private int itemSold=0;
+	
+	enum menu{
+		BURGER(99),CHILLYPOTATO(149),VEGBUFFET(849);
+		private int price;
+		menu(int p){
+			this.price=p;
+		}
+		int getPrice(){
+			return this.price;
+		}
+	}	 
+	
+	GreenChilly(){
+		super("GreenChilly","9313781182");
+	}	
+	
+	menu getItem(String item){
+		menu m=menu.valueOf(item);
+		return m;
+	}
+	
+	boolean isPresent(String item){
+		if(menu.valueOf(item)!=null){
+			return true;
+		}
+		return false;
+	}
+	
+	void placeOrder(String item) throws IOException{
+		if(isPresent(item)){
+			setAmt(getItem(item).getPrice());
+			generateBill(amt);
+			itemSold++;
+			return;
+		}
+		System.out.println(item+"is not available");
+	}
+	
+	void generateBill(int amt) throws IOException{
+		BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter Customer Name");
+		String a=br.readLine();
+		
+		
+	}
+	
+	public int getItemSold(){
+		return itemSold;
+	}
+}

@@ -1,0 +1,10 @@
+package vikas;
+
+public class Bill {
+	
+	String name,phone,addr,restaurant;
+	int amt;
+	Bill(String cName,String cPhone,String cAddr,int amt){
+		
+	}
+}

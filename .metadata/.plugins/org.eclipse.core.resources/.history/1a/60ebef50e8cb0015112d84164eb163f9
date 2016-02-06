@@ -1,0 +1,63 @@
+package vikas;
+
+public abstract class Restaurant {
+
+	protected String name,phoneNumber;
+	abstract void placeOrder(String item);
+	Restaurant(String a,String b){
+		name=a;
+		phoneNumber=b;
+	}
+	public String getName(){
+		return name;
+	}	
+	public String getPhoneNumber(){
+		return phoneNumber;
+	}
+}
+
+
+class GreenChilly extends Restaurant{
+	
+	static private int itemSold=0;
+	
+	enum menu{
+		BURGER(99),CHILLYPOTATO(149),VEGBUFFET(849);
+		private int price;
+		menu(int p){
+			this.price=p;
+		}
+		int getPrice(){
+			return this.price;
+		}
+	}	 
+	
+	GreenChilly(){
+		super("GreenChilly","9313781182");
+	}	
+	
+	menu getItem(String item){
+		menu m=menu.valueOf(item);
+		return m;
+	}
+	
+	boolean isPresent(String item){
+		if(menu.valueOf(item)!=null){
+			return true;
+		}
+		return false;
+	}
+	
+	void placeOrder(String item){
+		if(isPresent(item)){
+			getItem(item).getPrice();
+			Bill b=new Bill();
+			itemSold++;
+		}
+		
+	}
+	
+	public int getItemSold(){
+		return itemSold;
+	}
+}

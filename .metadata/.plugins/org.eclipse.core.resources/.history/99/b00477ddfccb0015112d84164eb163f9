@@ -1,0 +1,15 @@
+package vikas;
+
+public class FoodPanda {
+
+	Restaurant getRestaurant(String item){
+		GreenChilly gc=new GreenChilly();
+		HiKolkata hk=new HiKolkata();
+		DrMomo dm=new DrMomo();
+		if(gc.isPresent(item)){return gc;}
+		else if(hk.isPresent(item)){return gc;}
+		else if(dm.isPresent(item)){return gc;}
+		return null;
+	}
+	
+}

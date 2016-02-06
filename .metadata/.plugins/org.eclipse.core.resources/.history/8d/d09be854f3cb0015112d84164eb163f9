@@ -1,0 +1,54 @@
+package vikas;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Day3Exercise {
+	
+	
+	public static void main(String... args) throws Exception{
+		int ch;
+		FoodPanda food=new FoodPanda();
+		Restaurant res;
+		String item;
+		BufferedReader br;
+		do{
+			System.out.println("Please enter you choice:");
+			System.out.println("1. Question 1");
+			System.out.println("2. Question 2");
+			System.out.println("3. Question 3");
+			System.out.println("4. Question 4");
+			System.out.println("5. Question 5");
+			System.out.println("6. Exit");
+			br= new BufferedReader(new InputStreamReader(System.in));
+			ch=Integer.parseInt(br.readLine());
+			switch(ch){
+				case 1:char choice;
+						do{
+							item="BURGER";
+							res=food.getRestaurant(item);
+							res.placeOrder(item);
+							System.out.println("Total number of burgers sold:"+res.getItemSold());
+							System.out.println("Do you Want to have another burger(y/n)");
+							choice=(char) br.read();
+						}while(choice=='y');
+						break;
+				case 2:System.out.println("Custom Bill Generation for GreenChilly");
+						res=new GreenChilly();
+						res.generateBill(res.name, amt)
+						break;
+				case 3:
+					break;
+				case 4:
+					break;
+				case 5:
+					break;
+				case 6: System.out.println("Exiting Now...");
+					break;
+				default:
+					break;
+			}
+		}while(ch!=6);
+	}
+
+}

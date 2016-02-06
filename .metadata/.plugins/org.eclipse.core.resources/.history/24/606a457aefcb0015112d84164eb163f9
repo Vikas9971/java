@@ -1,0 +1,12 @@
+package vikas;
+
+public class FoodPanda {
+
+	GreenChilly gc=new GreenChilly();
+
+	Restaurant getRestaurant(String item){
+		if(gc.isPresent(item)){return gc;}
+		return null;
+	}
+	
+}

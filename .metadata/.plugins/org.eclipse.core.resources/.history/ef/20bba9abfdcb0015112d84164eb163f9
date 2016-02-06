@@ -1,0 +1,208 @@
+package vikas;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public abstract class Restaurant{
+
+	protected String name,phoneNumber;
+	protected int amt;
+	
+	abstract void placeOrder(String item) throws Exception;
+	abstract boolean isPresent(String item);
+	abstract int getItemSold();
+	
+	
+	void generateBill(String name,int amt) throws IOException{
+		BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter Customer Name");
+		String a=br.readLine();
+		System.out.println("Enter Customer's Phone Number");
+		String b=br.readLine();
+		System.out.println("Enter Customer's Address");
+		String c=br.readLine();
+		new Bill(name,a,b,c,amt).show();
+	}
+	
+	Restaurant(String a,String b){
+		name=a;
+		phoneNumber=b;
+	}
+	public String getName(){
+		return name;
+	}	
+	public String getPhoneNumber(){
+		return phoneNumber;
+	}
+	public int getAmt(){
+		return amt;
+	}	
+	public void setAmt(int t){
+		amt=t;
+	}
+}
+
+
+class GreenChilly extends Restaurant{
+	
+	static private int itemSold=0;
+	
+	enum menu{
+		BURGER(99),CHILLYPOTATO(149),CORNSOUP(249),VEGBUFFET(849);
+		private int price;
+		menu(int p){
+			this.price=p;
+		}
+		int getPrice(){
+			return this.price;
+		}
+	}	 
+	
+	private GreenChilly(){
+		super("GreenChilly","9313781182");
+	}	
+	
+	public static final GreenChilly INSTANCE=new GreenChilly();
+	public static GreenChilly getInstance(){
+		return INSTANCE;
+	}
+	
+	menu getItem(String item){
+		menu m=menu.valueOf(item);
+		return m;
+	}
+	
+	public boolean isPresent(String item){
+		try{
+			menu.valueOf(item);
+			return true;
+		}catch(IllegalArgumentException e){//
+			return false;
+		}
+	}
+	
+	public void placeOrder(String item) throws IOException{
+		System.out.println("Welcome to GreenChilly");
+		if(isPresent(item)){
+			setAmt(getItem(item).getPrice());
+			generateBill(this.getName(),amt);
+			itemSold++;
+			return;
+		}
+		System.out.println(item+"is not available");
+	}
+	
+	
+	
+	public int getItemSold(){
+		return itemSold;
+	}
+}
+
+
+class HiKolkata extends Restaurant{
+	
+	static private int itemSold=0;
+	
+	enum menu{
+		HILSA(699),CRAB(949),NONVEGBUFFET(1449);
+		private int price;
+		menu(int p){
+			this.price=p;
+		}
+		int getPrice(){
+			return this.price;
+		}
+	}	 
+	
+	HiKolkata(){
+		super("Hi!Kolkata","9313781182");
+	}	
+	
+	menu getItem(String item){
+		menu m=menu.valueOf(item);
+		return m;
+	}
+	
+	public boolean isPresent(String item){
+		try{
+			menu.valueOf(item);
+			return true;
+		}catch(IllegalArgumentException e){//
+			return false;
+		}
+	}
+	
+	public void placeOrder(String item) throws IOException{
+		System.out.println("Welcome to HI!Kolkata");
+		if(isPresent(item)){
+			setAmt(getItem(item).getPrice());
+			generateBill(this.getName(),amt);
+			itemSold++;
+			return;
+		}
+		System.out.println(item+"is not available");
+	}
+	
+	
+	
+	public int getItemSold(){
+		return itemSold;
+	}
+}
+
+
+
+class DrMomo extends Restaurant{
+	
+	static private int itemSold=0;
+	
+	enum menu{
+		VEGMOMO(99),NONVEGMOMO(149),STEAMEDMOMO(249);
+		private int price;
+		menu(int p){
+			this.price=p;
+		}
+		int getPrice(){
+			return this.price;
+		}
+	}	 
+	
+	DrMomo(){
+		super("Dr.Momo","9313781182");
+	}	
+	
+	menu getItem(String item){
+		menu m=menu.valueOf(item);
+		return m;
+	}
+	
+	public boolean isPresent(String item){
+		try{
+			menu.valueOf(item);
+			return true;
+		}catch(IllegalArgumentException e){//
+			return false;
+		}
+	}
+	
+	public void placeOrder(String item) throws IOException{
+		System.out.println("Welcome to Dr.Momo");
+		if(isPresent(item)){
+			setAmt(getItem(item).getPrice());
+			generateBill(this.getName(),amt);
+			itemSold++;
+			return;
+		}
+		System.out.println(item+"is not available");
+	}
+	
+	
+	
+	public int getItemSold(){
+		return itemSold;
+	}
+}
+

@@ -1,0 +1,13 @@
+package vikas;
+
+public class Day3Exercise {
+	
+	
+	public static void main(String... args){
+		char ch;
+	}
+	do{
+		
+	}while(ch=='y');
+
+}

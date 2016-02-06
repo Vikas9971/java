@@ -1,0 +1,19 @@
+package vikas;
+
+import javax.swing.JOptionPane;
+
+public class Bill {
+	
+	String name,phone,addr,restaurant;
+	int amt;
+	Bill(String cName,String cPhone,String cAddr,int amt){
+		name=cName;
+		phone=cPhone;
+		addr=cAddr;
+		this.amt=amt;
+	}
+	void show(){
+		String str="Name of Customer:"+name+"\nContact Number:"+phone+"\nAddress:"+addr+"\nBill Amount:"+amt"\n"
+		JOptionPane.showMessageDialog(null,str);
+	}
+}

@@ -1,0 +1,25 @@
+package vikas;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Day3Exercise {
+	
+	
+	public static void main(String... args){
+		int ch;
+	
+		do{
+			System.out.println("Please enter you choice:");
+			System.out.println("1. Question 1");
+			System.out.println("2. Question 1");
+			System.out.println("3. Question 1");
+			System.out.println("4. Question 1");
+			System.out.println("5. Question 1");
+			System.out.println("6. Exit");
+			BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+			ch=Integer.parseInt(br.read());
+		}while(ch!=6);
+	}
+
+}

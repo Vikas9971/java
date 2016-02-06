@@ -1,0 +1,23 @@
+package vikas;
+
+public abstract class Restaurant {
+
+	String name,phoneNumber;
+	
+}
+
+
+class GreenChilly extends Restaurant{
+	
+	enum menu{
+		BURGER(99),CHILLYPOTATO(149),VEGBUFFET(849);
+		int price;
+		menu(int p){
+			this.price=p;
+		}
+	}
+	
+	menu getItem(String item){
+		menu m=menu.valueOf(item);
+	}
+}

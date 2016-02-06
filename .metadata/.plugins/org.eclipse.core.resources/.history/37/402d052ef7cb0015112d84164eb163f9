@@ -1,0 +1,82 @@
+package vikas;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Day3Exercise {
+	
+	
+	public static void main(String... args) throws Exception{
+		int ch;
+		FoodPanda food=new FoodPanda();
+		Restaurant res;
+		String item;
+		BufferedReader br;
+		do{
+			System.out.println("Please enter you choice:");
+			System.out.println("1. Question 1");
+			System.out.println("2. Question 2");
+			System.out.println("3. Question 3");
+			System.out.println("4. Question 4");
+			System.out.println("5. Question 5");
+			System.out.println("6. Exit");
+			br= new BufferedReader(new InputStreamReader(System.in));
+			ch=Integer.parseInt(br.readLine());
+			switch(ch){
+				case 1:char choice;
+						do{
+							item="BURGER";
+							res=food.getRestaurant(item);
+							res.placeOrder(item);
+							System.out.println("Total number of burgers sold:"+res.getItemSold());
+							System.out.println("Do you Want to have another burger(y/n)");
+							choice=(char) br.read();
+						}while(choice=='y');
+						break;
+				case 2:System.out.println("Custom Bill Generation for GreenChilly");
+						res=new GreenChilly();
+						System.out.println("Enter Bill Amount:");
+						int amt=Integer.parseInt(br.readLine());
+						res.setAmt(amt);
+						res.generateBill(res.name, res.amt);
+						break;
+				case 3:System.out.println("Please Enter your Order Item");
+						item=br.readLine().toUpperCase();
+						res=new GreenChilly();
+						do{
+						if(res.isPresent(item)){
+							res.placeOrder(item);
+							break;
+						}
+						else{
+							System.out.println(item+" is not available at the moment\nWould you like to try something else\nPress 'EXIT' to exit");
+							item=br.readLine().toUpperCase();
+						}
+						}while(!item.equals("EXIT"));
+					break;
+				case 4:System.out.println("Welcome to FoodPanda!!");
+						System.out.println("Please Enter your Order Item");
+						item=br.readLine().toUpperCase();
+						res=new GreenChilly();
+						do{
+						if(res.isPresent(item)){
+							res.placeOrder(item);
+							break;
+						}
+						else{
+							System.out.println(item+" is not available at the moment\nWould you like to try something else\nPress 'EXIT' to exit");
+							item=br.readLine().toUpperCase();
+						}
+						}while(!item.equals("EXIT"));
+					break;
+				case 5:
+					break;
+				case 6: System.out.println("Exiting Now...");
+					break;
+				default:
+					break;
+			}
+		}while(ch!=6);
+	}
+
+}

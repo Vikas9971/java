@@ -1,0 +1,46 @@
+package vikas;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Day3Exercise {
+	
+	
+	public static void main(String... args) throws IOException{
+		int ch;
+		FoodPanda food=new FoodPanda();
+		do{
+			System.out.println("Please enter you choice:");
+			System.out.println("1. Question 1");
+			System.out.println("2. Question 2");
+			System.out.println("3. Question 3");
+			System.out.println("4. Question 4");
+			System.out.println("5. Question 5");
+			System.out.println("6. Exit");
+			BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+			ch=br.read();
+			switch(ch){
+				case 1:char choice;
+						do{							
+							System.out.println("Do you Want to have another burger(y/n)");
+							choice=(char) br.read();
+						}while(choice=='y');
+						break;
+				case 2:
+					break;
+				case 3:
+					break;
+				case 4:
+					break;
+				case 5:
+					break;
+				case 6: System.out.println("Exiting Now...");
+					break;
+				default:
+					break;
+			}
+		}while(ch!=6);
+	}
+
+}
