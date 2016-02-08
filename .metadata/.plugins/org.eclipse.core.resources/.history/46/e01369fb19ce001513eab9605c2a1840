@@ -7,7 +7,8 @@ import java.io.InputStreamReader;
 
 public abstract class Restaurant{
 
-	protected String name,phoneNumber;
+	protected String name;
+	protected long phoneNumber;
 	protected int amt;
 	
 	abstract void placeOrder(String item) throws Exception;
@@ -26,7 +27,7 @@ public abstract class Restaurant{
 		new Bill(name,a,b,c,amt).show();
 	}
 	
-	Restaurant(String a,String b){
+	Restaurant(String a,long b){
 		name=a;
 		phoneNumber=b;
 	}
@@ -88,8 +89,7 @@ class GreenChilly extends Restaurant{
 		if(isPresent(item)){
 			setAmt(getItem(item).getPrice());
 			generateBill(this.getName(),amt);
-			if(item.equalsIgnoreCase("burger")){
-			itemSold++;}
+			itemSold++;
 			return;
 		}
 		System.out.println(item+"is not available");

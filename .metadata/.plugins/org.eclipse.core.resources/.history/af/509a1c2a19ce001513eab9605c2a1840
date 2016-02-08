@@ -88,8 +88,7 @@ class GreenChilly extends Restaurant{
 		if(isPresent(item)){
 			setAmt(getItem(item).getPrice());
 			generateBill(this.getName(),amt);
-			if(item.equalsIgnoreCase("burger")){
-			itemSold++;}
+			itemSold++;
 			return;
 		}
 		System.out.println(item+"is not available");

@@ -7,7 +7,8 @@ import java.io.InputStreamReader;
 
 public abstract class Restaurant{
 
-	protected String name,phoneNumber;
+	protected String name;
+	protected long phoneNumber;
 	protected int amt;
 	
 	abstract void placeOrder(String item) throws Exception;
@@ -26,14 +27,14 @@ public abstract class Restaurant{
 		new Bill(name,a,b,c,amt).show();
 	}
 	
-	Restaurant(String a,String b){
+	Restaurant(String a,long b){
 		name=a;
 		phoneNumber=b;
 	}
 	public String getName(){
 		return name;
 	}	
-	public String getPhoneNumber(){
+	public long getPhoneNumber(){
 		return phoneNumber;
 	}
 	public int getAmt(){
@@ -61,7 +62,7 @@ class GreenChilly extends Restaurant{
 	}	 
 	
 	private GreenChilly(){
-		super("GreenChilly","9313781182");
+		super("GreenChilly",9313781182l);
 	}	
 	
 	public static final GreenChilly INSTANCE=new GreenChilly();
@@ -88,8 +89,7 @@ class GreenChilly extends Restaurant{
 		if(isPresent(item)){
 			setAmt(getItem(item).getPrice());
 			generateBill(this.getName(),amt);
-			if(item.equalsIgnoreCase("burger")){
-			itemSold++;}
+			itemSold++;
 			return;
 		}
 		System.out.println(item+"is not available");
